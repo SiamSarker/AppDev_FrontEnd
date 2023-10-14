@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import { Button, Text, View, StyleSheet } from "react-native";
+import { Button, Text, View, StyleSheet, Vibration } from "react-native";
 
 const CounterPage = () => {
     let [counter, setCounter] = useState(0);
 
     const increaseHandler = () => {
+        Vibration.vibrate(500);
         setCounter(counter + 1)
         console.log("Current Value: ", counter)
     }
 
     const decreaseHandler = () => {
+        Vibration.vibrate(500);
         setCounter(counter - 1)
         console.log("Current Value: ", counter)
     }
     const resetHandler = () => {
+        Vibration.vibrate(500);
         setCounter(0)
         console.log("Current Value: ", counter)
     }
