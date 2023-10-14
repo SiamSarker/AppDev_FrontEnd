@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Text, View, StyleSheet, Vibration } from "react-native";
 
-const CounterPage = () => {
+const CounterPage = (props: any) => {
     let [counter, setCounter] = useState(0);
 
     console.log("Current Value: ", counter)
@@ -20,6 +20,10 @@ const CounterPage = () => {
         setCounter(0)
     }
 
+    const navHandler = () => {
+        props.navigation.navigate("Login");
+    }
+
     return (
         <View style={style.mainContainer}>
             <Text style={style.counterContainer}>{counter}</Text>
@@ -27,6 +31,9 @@ const CounterPage = () => {
                 <Button title='Increase' onPress={increaseHandler}></Button>
                 <Button title='Decrease' onPress={decreaseHandler}></Button>
                 <Button title='Reset' onPress={resetHandler}></Button>
+            </View>
+            <View>
+                <Button title='LOGIN' onPress={navHandler}></Button>
             </View>
         </View>
     )
