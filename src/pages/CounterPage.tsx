@@ -27,6 +27,7 @@ const CounterPage = (props: any) => {
     return (
         <View style={style.mainContainer}>
             <Text style={style.counterContainer}>{counter}</Text>
+            // this is from office space
             <View style={style.buttonContainer}>
                 <Button title='Increase' onPress={increaseHandler}></Button>
                 <Button title='Decrease' onPress={decreaseHandler}></Button>
