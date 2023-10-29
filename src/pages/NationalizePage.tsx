@@ -4,8 +4,8 @@ import { View, Text, StyleSheet, TextInput,Button } from 'react-native';
 
 
 const NationalizePage = () => {
-    const [nationality, setNationality] = useState('A');
-    const [userName, setuserName] = useState('B');
+    const [nationality, setNationality] = useState('BD');
+    const [userName, setuserName] = useState('Siam');
 
     const handleSubmit = () => {
         axios.get(`https://api.nationalize.io/?name=${userName}`).then((res)=>{
@@ -37,8 +37,8 @@ const style = StyleSheet.create({
         alignContent: 'center',
     },
     mainText: {
-        fontSize: 80,
-        fontWeight: "700",
+        fontSize: 60,
+        fontWeight: "500",
         color: "red"
     },
     inputStyle: {
