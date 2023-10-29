@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Button, Text, View, StyleSheet, Vibration } from "react-native";
+import { Button, Text, View, StyleSheet } from "react-native";
 
 const LoginPage = (props: any) => {
     
