@@ -8,7 +8,7 @@ const LoginPage = (props: any) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const handleSubmit = () => {
-        if(email === "abc@gmail.com" && password === "abc123") {
+        if(email == "abc@gmail.com" && password === "abc123") {
             console.log('Good work', email, password);
             setIsLoggedIn(true);
         } else {
@@ -25,7 +25,6 @@ const LoginPage = (props: any) => {
         return(
             <View>
                 <Text>Successfully Logged In</Text>
-                <Button title='Submit' onPress={handleSubmit}></Button>
             </View>
         )
     }
