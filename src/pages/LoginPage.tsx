@@ -5,31 +5,57 @@ const LoginPage = (props: any) => {
 
     const [email, setEmail] = useState('Email');
     const [password, setPassword] = useState('****');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const handleSubmit = () => {
-        console.log('Uha Still work to do...', email, password);
+        if(email === "abc@gmail.com" && password === "abc123") {
+            console.log('Good work', email, password);
+            setIsLoggedIn(true);
+        } else {
+            console.log('Uha Still work to do...', email, password);
+            setIsLoggedIn(false);
+        }
     };
     
     const navHandler = () => {
         props.navigation.navigate("Counter");
     }
 
-    return (
-        <View style={style.mainContainer}>
-            <Text>Hello TO THE NEW PAGE</Text>
+    const showSuccessMessage = () => {
+        return(
             <View>
-                <TextInput style={style.inputStyle} value={email} onChangeText={setEmail}></TextInput>
-            </View>
-            <View>
-                <TextInput style={style.inputStyle} value={password} onChangeText={setPassword}></TextInput>
-            </View>
-            <View>
+                <Text>Successfully Logged In</Text>
                 <Button title='Submit' onPress={handleSubmit}></Button>
             </View>
+        )
+    }
 
+    const showLoginComponent = () => {
+        return(
             <View>
-                <Button title='BACK' onPress={navHandler}></Button>
+
+                <Text>Hello TO THE NEW PAGE</Text>
+                <View>
+                    <TextInput style={style.inputStyle} onChangeText={setEmail} placeholder="Enter your email"></TextInput>
+                </View>
+                <View>
+                    <TextInput style={style.inputStyle} onChangeText={setPassword} placeholder="Enter Password" secureTextEntry></TextInput>
+                </View>
+                <View>
+                    <Button title='Submit' onPress={handleSubmit}></Button>
+                </View>
+
+                <View>
+                    <Button title='BACK' onPress={navHandler}></Button>
+                </View>
             </View>
+        
+        )
+    }
+
+    return (
+        <View style={style.mainContainer}>
+            {!isLoggedIn ? showLoginComponent() : showSuccessMessage()}
         </View>
     )
 }
