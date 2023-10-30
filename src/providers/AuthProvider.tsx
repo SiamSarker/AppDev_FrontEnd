@@ -20,3 +20,5 @@ const AuthProvider = (props:any) =>{
 
 }
 
+export {AuthProvider, AuthContext};
+
