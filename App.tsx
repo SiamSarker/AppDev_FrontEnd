@@ -26,6 +26,7 @@ return(
     <bottom_tab.Navigator>
       <bottom_tab.Screen name="Dashboard" component={BasicDashboardScreen}></bottom_tab.Screen>
       <bottom_tab.Screen name="Setting" component={SettingsPage}></bottom_tab.Screen>
+      <bottom_tab.Screen name="Profile" component={SettingsPage}></bottom_tab.Screen>
     </bottom_tab.Navigator>
   </NavigationContainer>
 
